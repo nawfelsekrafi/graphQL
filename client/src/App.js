@@ -1,13 +1,12 @@
 import {
   ApolloClient,
   InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql
-} from "@apollo/client";
+  ApolloProvider
+} from "@apollo/react-hooks";
 
 // components 
 import BookList from './components/BookList';
+import AddBook from './components/AddBook';
 
 
 // Apollo client setup
@@ -23,6 +22,7 @@ function App() {
     <div id="main">
       <h1>Hello World !</h1>
       <BookList />
+      <AddBook />
     </div>
     </ApolloProvider>
   );

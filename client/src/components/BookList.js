@@ -1,24 +1,30 @@
-import { gql } from '@apollo/client';
-import { graphql } from '@apollo/client/react/hoc';
+import React, { Component } from 'react';
+import { graphql } from '@apollo/react-hoc';
+import {getBooksQuery} from '../queries/queries';
 
-const getBooksQuery = gql`
-{
-	books {
-		name
-		id
-	}
-}
-`
 
-function BookList() {
-    return (
-      <div>
-          <ul id="book-list">
-                <li>Book name</li>
-          </ul>
-      </div>
-    );
+class BookList extends Component {
+  displayBooks(){
+    var data = this.props.data;
+    if(data.loading){
+      return (<div>books details loading...</div>);
+    }else {
+      let books = this.props.data.books;
+      return books.map(book => {
+        return(<li key={book.id}>{book.name}</li>)
+      });
+    }
   }
-  
+    render(){
+        console.log(this.props);
+        return(
+            <div>
+                <ul id="book-list">
+                    {this.displayBooks()}
+                </ul>
+            </div>
+        );
+    }
+}
+
 export default graphql(getBooksQuery)(BookList);
-  
