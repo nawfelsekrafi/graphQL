@@ -1,0 +1,27 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "Nawfel's first graphQL meeting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nawfelsekrafi/GraphQl-Hello-World.git"
+  },
+  "author": "Nawfel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nawfelsekrafi/GraphQl-Hello-World/issues"
+  },
+  "homepage": "https://github.com/nawfelsekrafi/GraphQl-Hello-World#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^14.7.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.3.4"
+  }
+}
